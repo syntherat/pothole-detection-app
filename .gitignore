@@ -1,0 +1,6 @@
+.venv
+.env
+app/__pycache__
+output/*
+data/raw/*
+data/yolo/*

@@ -1,0 +1,4 @@
+path: C:\Users\palso\OneDrive\Desktop\VITB\epics\pothole_detect_app\data\yolo
+train: images/train
+val: images/val
+names: [pothole]
