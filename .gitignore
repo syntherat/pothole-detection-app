@@ -17,10 +17,12 @@ env/
 
 # Model Files (pretrained & trained weights)
 *.pt
+!model/best.pt
 *.pth
 *.weights
 *.onnx
-model/
+model/*
+!model/best.pt
 !model/.gitkeep
 
 # Training Data & Datasets
