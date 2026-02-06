@@ -317,9 +317,8 @@ Format: `class_id center_x center_y width height` (all normalized 0-1)
 
 Contributions are welcome! Areas for improvement:
 - Additional model architectures
-- Mobile/edge deployment optimization
 - Multi-class detection (cracks, road damage types)
-- Web-based interface
+- Car-based interface
 - API for integration with existing systems
 
 ---
@@ -356,7 +355,6 @@ For questions, issues, or suggestions:
 ## 🗺️ Roadmap
 
 - [ ] Real-time webcam/stream detection
-- [ ] Mobile app (iOS/Android)
 - [ ] Cloud deployment with REST API
 - [ ] Multi-language support
 - [ ] Integration with GIS systems for geolocation
