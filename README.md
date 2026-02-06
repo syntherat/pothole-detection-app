@@ -326,9 +326,13 @@ Contributions are welcome! Areas for improvement:
 
 ## 📄 License
 
-This project is proprietary and confidential. All rights reserved. See the [LICENSE](LICENSE) file for details.
+**Copyright © 2026. All Rights Reserved.**
 
-Unauthorized copying, modification, distribution, or use of this software is strictly prohibited.
+This software is proprietary and confidential. Unauthorized copying, transfer, modification, distribution, or use of this software, via any medium, is strictly prohibited without prior written permission from the copyright holder.
+
+For licensing inquiries, please contact the project maintainer.
+
+See the [LICENSE](LICENSE) file for complete terms and conditions.
 
 ---
 
