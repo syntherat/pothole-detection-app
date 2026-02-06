@@ -84,7 +84,7 @@ pothole_detect_app/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/pothole_detect_app.git
+   git clone https://github.com/syntherat/pothole-detection-app.git
    cd pothole_detect_app
    ```
 
