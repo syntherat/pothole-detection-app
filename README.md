@@ -274,15 +274,21 @@ annotated = detector.visualize(image, results, show_mask=True)
 
 ## 📊 Model Performance
 
-Typical performance metrics on pothole detection datasets:
+Performance metrics vary significantly based on dataset quality, size, and diversity. Below are typical ranges for YOLO models on pothole detection:
 
 | Model | Size | Speed (ms) | mAP@0.5 | Precision | Recall |
 |-------|------|------------|---------|-----------|--------|
-| YOLOv11n | 2.6MB | 2-3 | ~85% | ~82% | ~78% |
-| YOLOv11s | 9.4MB | 4-6 | ~90% | ~88% | ~85% |
-| YOLOv11m | 20MB | 12-15 | ~93% | ~91% | ~89% |
+| YOLOv11n | 2.6MB | 1-2 | 55-70% | 60-75% | 50-65% |
+| YOLOv11s | 9.4MB | 2-4 | 60-75% | 65-80% | 55-70% |
+| YOLOv11m | 20MB | 5-8 | 65-80% | 70-85% | 60-75% |
 
-*Benchmarked on NVIDIA GTX 1660 Ti. Actual performance varies by dataset quality.*
+*Speed benchmarks on NVIDIA RTX 4060. Your results will vary based on:*
+- *Dataset size and quality (lighting, angles, pothole variety)*
+- *Annotation accuracy and consistency*  
+- *Training hyperparameters and epochs*
+- *Class balance (number of pothole examples)*
+
+**Tip:** Well-annotated datasets with 2000+ diverse examples typically achieve the higher end of these ranges.
 
 ---
 
