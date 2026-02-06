@@ -339,7 +339,7 @@ See the [LICENSE](LICENSE) file for complete terms and conditions.
 ## 🙏 Acknowledgments
 
 - **[Ultralytics](https://ultralytics.com/)** for the excellent YOLO implementation
-- Pothole datasets from various road maintenance departments
+- Pothole datasets from kaggle and roboflow.
 - Open-source computer vision community
 
 ---
