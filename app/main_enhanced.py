@@ -109,7 +109,7 @@ class PotholeAppEnhanced:
         
         header_title = tk.Label(
             header_frame, 
-            text="Road Pothole Detection System - Enhanced",
+            text="Pothole Alerts for Vehicular Environments(P.A.V.E.)",
             font=("Segoe UI", 18, "bold"),
             bg=PRIMARY_COLOR,
             fg="white"
