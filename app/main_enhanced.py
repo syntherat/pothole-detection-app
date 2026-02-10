@@ -120,10 +120,31 @@ class PotholeAppEnhanced:
         main_container = tk.Frame(self.root, bg=BG_COLOR)
         main_container.pack(fill="both", expand=True, padx=15, pady=15)
         
-        # Left panel
-        left_panel = tk.Frame(main_container, bg=BG_COLOR, width=250)
-        left_panel.pack(side="left", fill="y", padx=(0, 10))
-        left_panel.pack_propagate(False)
+        # Left panel with scrollbar
+        left_frame = tk.Frame(main_container, bg=BG_COLOR, width=250)
+        left_frame.pack(side="left", fill="both", expand=False, padx=(0, 10))
+        left_frame.pack_propagate(False)
+        
+        # Create scrollable canvas for left panel
+        left_canvas = tk.Canvas(left_frame, bg=BG_COLOR, highlightthickness=0)
+        left_scrollbar = tk.Scrollbar(left_frame, orient="vertical", command=left_canvas.yview)
+        left_panel = tk.Frame(left_canvas, bg=BG_COLOR)
+        
+        left_panel.bind(
+            "<Configure>",
+            lambda e: left_canvas.configure(scrollregion=left_canvas.bbox("all"))
+        )
+        
+        left_canvas.create_window((0, 0), window=left_panel, anchor="nw")
+        left_canvas.configure(yscrollcommand=left_scrollbar.set)
+        
+        # Bind mousewheel to scrolling
+        def _on_mousewheel(event):
+            left_canvas.yview_scroll(int(-1*(event.delta/120)), "units")
+        left_canvas.bind_all("<MouseWheel>", _on_mousewheel)
+        
+        left_canvas.pack(side="left", fill="both", expand=True)
+        left_scrollbar.pack(side="right", fill="y")
         
         # Mode selector
         mode_frame = tk.LabelFrame(
@@ -754,7 +775,6 @@ class PotholeAppEnhanced:
                 self.status_var.set("Preprocessing image...")
                 self.root.update_idletasks()
                 
-                import cv2
                 preprocessed = preprocess_image(
                     self.img_path,
                     enhance=self.enhance_var.get(),
