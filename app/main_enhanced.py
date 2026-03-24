@@ -332,7 +332,7 @@ class PotholeAppEnhanced:
         # Two-stage detection section
         road_seg_label = tk.Label(
             settings_frame,
-            text="Road Segmentation",
+            text="Visible Road Segmentation",
             font=("Segoe UI", 9, "bold"),
             bg=BG_COLOR,
             fg=TEXT_COLOR
@@ -341,7 +341,7 @@ class PotholeAppEnhanced:
 
         tk.Checkbutton(
             settings_frame,
-            text="Enable road segmentation (filters false positives)",
+            text="Enable multi-class road mask (exclude vehicles/pedestrians/shadows)",
             variable=self.use_road_seg_var,
             command=self._toggle_road_seg,
             bg=BG_COLOR,
@@ -359,10 +359,10 @@ class PotholeAppEnhanced:
 
         # Status indicator
         if self.two_stage_detector and self.two_stage_detector.use_road_seg:
-            status_text = "✓ Road segmentation model loaded"
+            status_text = "✓ Segmentation model loaded (multi-class visible road filtering active)"
             status_color = SUCCESS_COLOR
         else:
-            status_text = "⚠ Road segmentation model not found (using single-stage)"
+            status_text = "⚠ Segmentation model not found (using single-stage)"
             status_color = "#d13438"
         
         status_label = tk.Label(
@@ -795,7 +795,7 @@ class PotholeAppEnhanced:
             start_time = time.time()
             
             if self.use_road_seg_var.get() and self.two_stage_detector and self.two_stage_detector.use_road_seg:
-                self.status_var.set("Segmenting road...")
+                self.status_var.set("Building visible-road mask...")
                 self.root.update_idletasks()
                 results, road_mask = self.two_stage_detector.detect_potholes(
                     frame, 
